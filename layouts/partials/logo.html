@@ -7,10 +7,14 @@
     <img src="{{ $.Site.Params.Logo.path }}" alt="{{ $.Site.Params.Logo.alt }}" />
   {{ end }}
   {{ if $.Site.Params.Logo.logoText}}
-    <span class="logo__mark">{{ partial "greater-icon.html" . }}</span>
+    {{ if not $.Site.Params.Logo.hideTerminal }}
+      <span class="logo__mark">{{ partial "greater-icon.html" . }}</span>
+    {{ end }}
     <span class="logo__text"
       >{{ with $.Site.Params.Logo.logoText }}{{ . }}{{ else }}hello friend{{ end }}</span
     >
-    <span class="logo__cursor"></span>
+    {{ if not $.Site.Params.Logo.hideTerminal }}
+      <span class="logo__cursor"></span>
+    {{ end }}
   {{ end }}
 </a>
