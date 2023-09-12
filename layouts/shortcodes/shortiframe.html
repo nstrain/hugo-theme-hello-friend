@@ -1,0 +1,11 @@
+{{ if .Get "src" }}
+    <iframe src="{{ .Get "src" | safeURL }}" {{ with .Get "alt" }} alt="{{ . | plainify }}" {{ end }} 
+        {{ with .Get "height" }} height="{{ . }}" {{ end }} 
+        {{ with .Get "width" }} width="{{ . }}" {{ end }} class="{{ with .Get "position"}}{{ . }}{{ else -}} left {{- end }}"
+        {{ with .Get "style" }} style="{{ . | safeCSS }}" {{ end }} 
+        {{ with .Get "scrolling" }} scrolling="{{ . }}" {{ end }} 
+        {{ with .Get "allowfullscreen" }} allowfullscreen="{{ . }}" {{ end }} 
+        {{ with .Get "allow" }} allow="{{ . }}" {{ end }} 
+        {{ with .Get "frameborder" }} frameborder="{{ . }}" {{ end }}>
+    </iframe>
+{{ end }}
