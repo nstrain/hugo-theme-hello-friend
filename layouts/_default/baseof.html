@@ -12,6 +12,7 @@
   </head>
   <body {{ with $.Site.Params.defaultTheme -}} class="{{ printf "%s-theme" . }}" {{- end }}>
     <div class="container">
+      {{ partial "construction_disclaimer.html" . }}
       {{ partial "header.html" . }}
 
       <div class="content">
